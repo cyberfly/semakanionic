@@ -1,0 +1,42 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Borang Daftar Tauliah">
+  <ion-content class="padding">
+
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nama Penuh</span>
+        <input type="text" placeholder="Nama Penuh" ng-model="data.nama_pemohon" ng-readonly="new_form=='N'">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">No KP</span>
+        <input type="text" placeholder="No KP" ng-model="data.icno" ng-readonly="new_form=='N'" >
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Email" ng-model="data.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">No HP</span>
+        <input type="text" placeholder="No HP" ng-model="data.no_tel">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Postcode</span>
+        <input type="text" placeholder="Postcode" ng-model="data.postcode">
+      </label>
+    </div>
+
+    <button class="button button-block button-positive" ng-click="updateMaklumatPemohon()" ng-show="new_form=='N'">
+      Kemaskini Tauliah
+    </button>
+
+    <button class="button button-block button-balanced" ng-click="updateMaklumatPemohon()" ng-show="new_form=='Y'">
+      Daftar Tauliah
+    </button>
+
+  </ion-content>
+</ion-view>
